@@ -9,6 +9,13 @@ def home(request):
     })
     #return HTTPResponse
 
+
+def recipes(request, id):
+    return render(request, 'recipes/pages/recipe_view.html', context={
+        'name': 'Christian'
+    })
+
+
 # def contact(request):
 #     return render(request, 'recipes/contact.html')
 
