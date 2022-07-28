@@ -4,24 +4,24 @@
     </div>
     <div class="recipe-title-container">
         <h2 class="recipe-title">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            {{recipe.title}}
         </h2>
     </div>
 
     <div class="recipe-author">
         <span class="recipe-author-item">
             <i class="fas fa-user"></i>
-            Christian Oliveira
+            {{recipe.author.first_name}} {{recipe.author.last_name}}
         </span>
         <span class="recipe-author-item">
             <i class="fas fa-calendar-alt"></i>
-            06/07/2022 as 20:57
+            {{recipe.created_at|date:"d/m/Y"}} às {{recipe.created_at|date:"H:i:s"}}
         </span>
         <span class="recipe-author-item">
             <a href="/recipes/category/cafe-da-manha">
                 <i class="fas fa-layer-group"></i>
                 <span>
-                    Café da manhã
+                    {{recipe.category.name}}
                 </span>
             </a>
         </span>
@@ -29,9 +29,7 @@
 
     <div class="recipe-content">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt iste maiores at, deserunt
-            accusamus vitae nobis! Dolore, tenetur tempore vel eveniet deserunt debitis odit dignissimos
-            explicabo, rem quos voluptatum aliquid.
+            {{recipe.description}}
         </p>
     </div>
 
@@ -42,7 +40,7 @@
                 Preparos
             </h3>
             <div class="recipe-meta-text">
-                0 minutos
+                {{recipe.preparation_time}} {{recipe.preparation_time_unit}}
             </div>
         </div>
         <div class="recipe-meta recipe-servings">
@@ -51,7 +49,7 @@
                 Porções
             </h3>
             <div class="recipe-meta-text">
-                0 Porções
+                {{recipe.servings}} {{recipe.servings_unit}}                
             </div>
         </div>
     </div>
