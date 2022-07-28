@@ -53,11 +53,20 @@
             </div>
         </div>
     </div>
-    <footer class="recipe-footer">
-        <a class="recipe-read-more button button-dark button-full-width" href="/recipes/3/">
-            <i class="fas fa-eye"></i>
-            <span>Ver mais</span>
-        </a>
+    {% if not is_detail_page %}
+        <footer class="recipe-footer">
+            <a class="recipe-read-more button button-dark button-full-width" href="/recipes/3/">
+                <i class="fas fa-eye"></i>
+                <span>Ver mais</span>
+            </a>
+        </footer>
+    {% endif %}
 
-    </footer>
+    {% if is_detail_page %}
+        <div class="preparation-steps">
+            <p>
+                {{ recipe.preparation_steps }}
+            </p>
+        </div>
+    {% endif %} 
 </div>
